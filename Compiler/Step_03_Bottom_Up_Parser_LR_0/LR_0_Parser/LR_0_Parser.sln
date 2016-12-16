@@ -1,0 +1,20 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual C++ Express 2010
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "LR_0_Parser", "LR_0_Parser.vcxproj", "{0B2981E4-98B3-424F-9CFC-62AF5EA1806E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		Release|Win32 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0B2981E4-98B3-424F-9CFC-62AF5EA1806E}.Debug|Win32.ActiveCfg = Debug|Win32
+		{0B2981E4-98B3-424F-9CFC-62AF5EA1806E}.Debug|Win32.Build.0 = Debug|Win32
+		{0B2981E4-98B3-424F-9CFC-62AF5EA1806E}.Release|Win32.ActiveCfg = Release|Win32
+		{0B2981E4-98B3-424F-9CFC-62AF5EA1806E}.Release|Win32.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

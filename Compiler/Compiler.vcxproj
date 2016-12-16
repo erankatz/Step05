@@ -1,0 +1,159 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{12D6AD9D-61B0-4104-A2F6-3092A27EED66}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <RootNamespace>Compiler</RootNamespace>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <CharacterSet>Unicode</CharacterSet>
+    <PlatformToolset>v140</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+    <PlatformToolset>v140</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="..\BISON\BISON_03_for_Tiger_Compiler\Bison\tiger.tab.c" />
+    <ClCompile Include="..\BISON\BISON_04_for_Code_Generation\Bison\PSEUDO_MIPS_ASM_AST.tab.c" />
+    <ClCompile Include="..\FLEX\FLEX_03_for_Tiger_Compiler\Flex\lex.yy.c" />
+    <ClCompile Include="..\FLEX\FLEX_04_for_Code_Generation\Flex\lex.zz.c" />
+    <ClCompile Include="..\FLEX\FLEX_05_for_Register_Allocation\Flex\lex.gg.c" />
+    <ClCompile Include="SOURCE_FILES\absyn.c" />
+    <ClCompile Include="SOURCE_FILES\ABSYN_Print.c" />
+    <ClCompile Include="SOURCE_FILES\env.c" />
+    <ClCompile Include="SOURCE_FILES\errormsg.c" />
+    <ClCompile Include="SOURCE_FILES\IR.c" />
+    <ClCompile Include="SOURCE_FILES\IR_Print.c" />
+    <ClCompile Include="SOURCE_FILES\Liveness_Analysis.c" />
+    <ClCompile Include="SOURCE_FILES\main.c" />
+    <ClCompile Include="SOURCE_FILES\MIPS_asm.c" />
+    <ClCompile Include="SOURCE_FILES\MIPS_frame.c" />
+    <ClCompile Include="SOURCE_FILES\parse.c" />
+    <ClCompile Include="SOURCE_FILES\Pseduo_Assembley_To_Simulation.c" />
+    <ClCompile Include="SOURCE_FILES\PSEUDO_MIPS_ASM_AST.c" />
+    <ClCompile Include="SOURCE_FILES\PSEUDO_MIPS_ASM_AST_errormsg.c" />
+    <ClCompile Include="SOURCE_FILES\Register_Allocation.c" />
+    <ClCompile Include="SOURCE_FILES\semant.c" />
+    <ClCompile Include="SOURCE_FILES\symbol.c" />
+    <ClCompile Include="SOURCE_FILES\table.c" />
+    <ClCompile Include="SOURCE_FILES\temp.c" />
+    <ClCompile Include="SOURCE_FILES\TEMPS_TO_REGS_errormsg.c" />
+    <ClCompile Include="SOURCE_FILES\tree.c" />
+    <ClCompile Include="SOURCE_FILES\types.c" />
+    <ClCompile Include="SOURCE_FILES\util.c" />
+    <ClCompile Include="SOURCE_FILES\Write_Assembley_Output_File.c" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\BISON\BISON_05_for_Register_Allocation\Bison\TEMPS_TO_REGS.tab.h" />
+    <ClInclude Include="HEADER_FILES\absyn.h" />
+    <ClInclude Include="HEADER_FILES\asm.h" />
+    <ClInclude Include="HEADER_FILES\env.h" />
+    <ClInclude Include="HEADER_FILES\errormsg.h" />
+    <ClInclude Include="HEADER_FILES\frame.h" />
+    <ClInclude Include="HEADER_FILES\IR.h" />
+    <ClInclude Include="HEADER_FILES\Liveness_Analysis.h" />
+    <ClInclude Include="HEADER_FILES\parse.h" />
+    <ClInclude Include="HEADER_FILES\Pseudo_Assembley_To_Simulation.h" />
+    <ClInclude Include="HEADER_FILES\PSEUDO_MIPS_ASM_AST.h" />
+    <ClInclude Include="HEADER_FILES\PSEUDO_MIPS_ASM_AST_errormsg.h" />
+    <ClInclude Include="HEADER_FILES\Register_Allocation.h" />
+    <ClInclude Include="HEADER_FILES\semant.h" />
+    <ClInclude Include="HEADER_FILES\symbol.h" />
+    <ClInclude Include="HEADER_FILES\table.h" />
+    <ClInclude Include="HEADER_FILES\temp.h" />
+    <ClInclude Include="HEADER_FILES\TEMPS_TO_REGS_errormsg.h" />
+    <ClInclude Include="HEADER_FILES\tree.h" />
+    <ClInclude Include="HEADER_FILES\types.h" />
+    <ClInclude Include="HEADER_FILES\util.h" />
+    <ClInclude Include="HEADER_FILES\Write_Assembley_Output_Filename.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="GRAPHVIZ_FILES\ABSYN_Graph.txt" />
+    <None Include="GRAPHVIZ_FILES\InterferenceGraph.txt" />
+    <None Include="GRAPHVIZ_FILES\IR_Graph.txt" />
+    <None Include="GRAPHVIZ_FILES\LivenessAnalysis.txt" />
+    <None Include="INPUT_TIGER_PROGRAMS\Another_Array_Boundaries_Checks.txt" />
+    <None Include="INPUT_TIGER_PROGRAMS\BubbleSort.txt" />
+    <None Include="INPUT_TIGER_PROGRAMS\Input.txt" />
+    <None Include="INPUT_TIGER_PROGRAMS\Array_Boundaries_Checks.txt" />
+    <None Include="INPUT_TIGER_PROGRAMS\Print_Primes_In_Range_2_to_100.txt" />
+    <None Include="INPUT_TIGER_PROGRAMS\Record_With_An_Array_Inside.txt" />
+    <None Include="Interference_Graph.txt" />
+    <None Include="Lexical_Analysis.txt" />
+    <None Include="Liveness_Analysis.txt" />
+    <None Include="OUTPUT_MIPS_ASM_FILES\Output.s" />
+    <None Include="Pseudo_Assembley.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="INPUT_TIGER_PROGRAMS\ClassesTest.txt" />
+    <Text Include="INPUT_TIGER_PROGRAMS\GoodBubbleSort.txt" />
+    <Text Include="INPUT_TIGER_PROGRAMS\GoodMerge_Lists.txt" />
+    <Text Include="INPUT_TIGER_PROGRAMS\Mat3.txt" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

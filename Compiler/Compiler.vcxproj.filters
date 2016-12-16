@@ -1,0 +1,295 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="Input Tiger Programs">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Output MIPS ASM Files">
+      <UniqueIdentifier>{2c946363-6f86-4c52-9c5f-c06d668fdb03}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Graphviz Files">
+      <UniqueIdentifier>{33c540c7-6526-4369-9e33-851952a87828}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Pseudo MIPS ASM Files">
+      <UniqueIdentifier>{7cb7904f-d64f-48b1-9597-6a997fb95220}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Intermediate Files">
+      <UniqueIdentifier>{da0c504c-d202-46a0-8253-6c892799d8b5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Infrastructure">
+      <UniqueIdentifier>{59144ff7-78b5-4d17-bc0d-bd2d2f607d5b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\01 FLEX Files">
+      <UniqueIdentifier>{9b223fcd-aebe-455c-b8ab-9b3b256ae061}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\02 BISON Files">
+      <UniqueIdentifier>{5e276cae-a23c-4d2e-90bc-a54794bd2301}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\03 Infrastructure">
+      <UniqueIdentifier>{06bd4e6c-b275-49c5-adbc-025a354223da}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\04 Temporaries &amp; Labels">
+      <UniqueIdentifier>{4aba0c5a-0f48-4d97-982b-35de9ca027a9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\05 Types">
+      <UniqueIdentifier>{04614684-7c63-4a69-b946-0d09eece95f8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\06 Semantic Analysis">
+      <UniqueIdentifier>{6a53a897-beec-44d8-9ae0-04820fb0da56}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\07 IR">
+      <UniqueIdentifier>{15d1b2a6-a996-47c3-8fad-df560f3ced7b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\08 Code Generation">
+      <UniqueIdentifier>{982a0a82-3592-4655-a7de-a85c1596c995}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\09 Liveness Analysis">
+      <UniqueIdentifier>{b261ac48-12d2-4660-852e-a51a3d352b6f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\10 Register Allocation">
+      <UniqueIdentifier>{0a3b109b-fd11-429b-b507-901391632a63}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\11 Write ASM Output File">
+      <UniqueIdentifier>{e0c3fc5b-c971-4fb0-a181-a5ed353294ab}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\12 Simulation">
+      <UniqueIdentifier>{4d7a4be1-ea63-4ab9-9dfd-6d52adba4108}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\13 Printing Files">
+      <UniqueIdentifier>{ab2e5d17-8533-4d69-aecc-ad5348eb41d2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\14 Pseudo MIPS ASM Files">
+      <UniqueIdentifier>{1a43ce71-ab11-4c06-911e-fe2c41eafb05}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Write ASM Output File">
+      <UniqueIdentifier>{764ed4ef-a17d-44b7-9c86-ffd1456c0c62}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="SOURCE_FILES\main.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\FLEX\FLEX_03_for_Tiger_Compiler\Flex\lex.yy.c">
+      <Filter>Source Files\01 FLEX Files</Filter>
+    </ClCompile>
+    <ClCompile Include="SOURCE_FILES\ABSYN_Print.c">
+      <Filter>Source Files\13 Printing Files</Filter>
+    </ClCompile>
+    <ClCompile Include="SOURCE_FILES\IR_Print.c">
+      <Filter>Source Files\13 Printing Files</Filter>
+    </ClCompile>
+    <ClCompile Include="SOURCE_FILES\PSEUDO_MIPS_ASM_AST.c">
+      <Filter>Source Files\14 Pseudo MIPS ASM Files</Filter>
+    </ClCompile>
+    <ClCompile Include="SOURCE_FILES\PSEUDO_MIPS_ASM_AST_errormsg.c">
+      <Filter>Source Files\14 Pseudo MIPS ASM Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\BISON\BISON_03_for_Tiger_Compiler\Bison\tiger.tab.c">
+      <Filter>Source Files\02 BISON Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\FLEX\FLEX_04_for_Code_Generation\Flex\lex.zz.c">
+      <Filter>Source Files\14 Pseudo MIPS ASM Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\BISON\BISON_04_for_Code_Generation\Bison\PSEUDO_MIPS_ASM_AST.tab.c">
+      <Filter>Source Files\14 Pseudo MIPS ASM Files</Filter>
+    </ClCompile>
+    <ClCompile Include="SOURCE_FILES\util.c">
+      <Filter>Source Files\03 Infrastructure</Filter>
+    </ClCompile>
+    <ClCompile Include="SOURCE_FILES\symbol.c">
+      <Filter>Source Files\03 Infrastructure</Filter>
+    </ClCompile>
+    <ClCompile Include="SOURCE_FILES\table.c">
+      <Filter>Source Files\03 Infrastructure</Filter>
+    </ClCompile>
+    <ClCompile Include="SOURCE_FILES\errormsg.c">
+      <Filter>Source Files\03 Infrastructure</Filter>
+    </ClCompile>
+    <ClCompile Include="SOURCE_FILES\temp.c">
+      <Filter>Source Files\04 Temporaries &amp; Labels</Filter>
+    </ClCompile>
+    <ClCompile Include="SOURCE_FILES\types.c">
+      <Filter>Source Files\05 Types</Filter>
+    </ClCompile>
+    <ClCompile Include="SOURCE_FILES\semant.c">
+      <Filter>Source Files\06 Semantic Analysis</Filter>
+    </ClCompile>
+    <ClCompile Include="SOURCE_FILES\env.c">
+      <Filter>Source Files\03 Infrastructure</Filter>
+    </ClCompile>
+    <ClCompile Include="SOURCE_FILES\tree.c">
+      <Filter>Source Files\03 Infrastructure</Filter>
+    </ClCompile>
+    <ClCompile Include="SOURCE_FILES\absyn.c">
+      <Filter>Source Files\03 Infrastructure</Filter>
+    </ClCompile>
+    <ClCompile Include="SOURCE_FILES\IR.c">
+      <Filter>Source Files\07 IR</Filter>
+    </ClCompile>
+    <ClCompile Include="SOURCE_FILES\MIPS_asm.c">
+      <Filter>Source Files\08 Code Generation</Filter>
+    </ClCompile>
+    <ClCompile Include="SOURCE_FILES\Liveness_Analysis.c">
+      <Filter>Source Files\09 Liveness Analysis</Filter>
+    </ClCompile>
+    <ClCompile Include="SOURCE_FILES\Register_Allocation.c">
+      <Filter>Source Files\10 Register Allocation</Filter>
+    </ClCompile>
+    <ClCompile Include="SOURCE_FILES\Write_Assembley_Output_File.c">
+      <Filter>Source Files\11 Write ASM Output File</Filter>
+    </ClCompile>
+    <ClCompile Include="SOURCE_FILES\Pseduo_Assembley_To_Simulation.c">
+      <Filter>Source Files\12 Simulation</Filter>
+    </ClCompile>
+    <ClCompile Include="SOURCE_FILES\parse.c">
+      <Filter>Source Files\03 Infrastructure</Filter>
+    </ClCompile>
+    <ClCompile Include="SOURCE_FILES\MIPS_frame.c">
+      <Filter>Source Files\03 Infrastructure</Filter>
+    </ClCompile>
+    <ClCompile Include="SOURCE_FILES\TEMPS_TO_REGS_errormsg.c">
+      <Filter>Source Files\11 Write ASM Output File</Filter>
+    </ClCompile>
+    <ClCompile Include="..\FLEX\FLEX_05_for_Register_Allocation\Flex\lex.gg.c">
+      <Filter>Source Files\11 Write ASM Output File</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="HEADER_FILES\asm.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="HEADER_FILES\env.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="HEADER_FILES\frame.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="HEADER_FILES\IR.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="HEADER_FILES\parse.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="HEADER_FILES\semant.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="HEADER_FILES\symbol.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="HEADER_FILES\types.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="HEADER_FILES\Liveness_Analysis.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="HEADER_FILES\PSEUDO_MIPS_ASM_AST.h">
+      <Filter>Header Files\Pseudo MIPS ASM Files</Filter>
+    </ClInclude>
+    <ClInclude Include="HEADER_FILES\PSEUDO_MIPS_ASM_AST_errormsg.h">
+      <Filter>Header Files\Pseudo MIPS ASM Files</Filter>
+    </ClInclude>
+    <ClInclude Include="HEADER_FILES\errormsg.h">
+      <Filter>Header Files\Infrastructure</Filter>
+    </ClInclude>
+    <ClInclude Include="HEADER_FILES\table.h">
+      <Filter>Header Files\Infrastructure</Filter>
+    </ClInclude>
+    <ClInclude Include="HEADER_FILES\util.h">
+      <Filter>Header Files\Infrastructure</Filter>
+    </ClInclude>
+    <ClInclude Include="HEADER_FILES\tree.h">
+      <Filter>Header Files\Infrastructure</Filter>
+    </ClInclude>
+    <ClInclude Include="HEADER_FILES\temp.h">
+      <Filter>Header Files\Infrastructure</Filter>
+    </ClInclude>
+    <ClInclude Include="HEADER_FILES\Register_Allocation.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="HEADER_FILES\Pseudo_Assembley_To_Simulation.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="HEADER_FILES\Write_Assembley_Output_Filename.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="HEADER_FILES\TEMPS_TO_REGS_errormsg.h">
+      <Filter>Header Files\Write ASM Output File</Filter>
+    </ClInclude>
+    <ClInclude Include="..\BISON\BISON_05_for_Register_Allocation\Bison\TEMPS_TO_REGS.tab.h">
+      <Filter>Header Files\Write ASM Output File</Filter>
+    </ClInclude>
+    <ClInclude Include="HEADER_FILES\absyn.h">
+      <Filter>Header Files\Infrastructure</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="GRAPHVIZ_FILES\ABSYN_Graph.txt">
+      <Filter>Graphviz Files</Filter>
+    </None>
+    <None Include="GRAPHVIZ_FILES\InterferenceGraph.txt">
+      <Filter>Graphviz Files</Filter>
+    </None>
+    <None Include="GRAPHVIZ_FILES\IR_Graph.txt">
+      <Filter>Graphviz Files</Filter>
+    </None>
+    <None Include="GRAPHVIZ_FILES\LivenessAnalysis.txt">
+      <Filter>Graphviz Files</Filter>
+    </None>
+    <None Include="INPUT_TIGER_PROGRAMS\Input.txt">
+      <Filter>Input Tiger Programs</Filter>
+    </None>
+    <None Include="Interference_Graph.txt">
+      <Filter>Intermediate Files</Filter>
+    </None>
+    <None Include="Liveness_Analysis.txt">
+      <Filter>Intermediate Files</Filter>
+    </None>
+    <None Include="Pseudo_Assembley.txt">
+      <Filter>Intermediate Files</Filter>
+    </None>
+    <None Include="Lexical_Analysis.txt">
+      <Filter>Intermediate Files</Filter>
+    </None>
+    <None Include="OUTPUT_MIPS_ASM_FILES\Output.s">
+      <Filter>Output MIPS ASM Files</Filter>
+    </None>
+    <None Include="INPUT_TIGER_PROGRAMS\Print_Primes_In_Range_2_to_100.txt">
+      <Filter>Input Tiger Programs</Filter>
+    </None>
+    <None Include="INPUT_TIGER_PROGRAMS\Array_Boundaries_Checks.txt">
+      <Filter>Input Tiger Programs</Filter>
+    </None>
+    <None Include="INPUT_TIGER_PROGRAMS\Record_With_An_Array_Inside.txt">
+      <Filter>Input Tiger Programs</Filter>
+    </None>
+    <None Include="INPUT_TIGER_PROGRAMS\Another_Array_Boundaries_Checks.txt">
+      <Filter>Input Tiger Programs</Filter>
+    </None>
+    <None Include="INPUT_TIGER_PROGRAMS\BubbleSort.txt">
+      <Filter>Input Tiger Programs</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="INPUT_TIGER_PROGRAMS\Mat3.txt">
+      <Filter>Input Tiger Programs</Filter>
+    </Text>
+    <Text Include="INPUT_TIGER_PROGRAMS\GoodMerge_Lists.txt">
+      <Filter>Input Tiger Programs</Filter>
+    </Text>
+    <Text Include="INPUT_TIGER_PROGRAMS\GoodBubbleSort.txt">
+      <Filter>Input Tiger Programs</Filter>
+    </Text>
+    <Text Include="INPUT_TIGER_PROGRAMS\ClassesTest.txt">
+      <Filter>Input Tiger Programs</Filter>
+    </Text>
+  </ItemGroup>
+</Project>

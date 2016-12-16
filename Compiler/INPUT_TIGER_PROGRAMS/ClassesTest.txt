@@ -1,0 +1,40 @@
+let
+
+	class Grandfather =
+	{
+		age:int;
+		salary:int;
+
+		function Age():int = PrintInt(age)
+	}
+
+	class Father extends Grandfather =
+	{
+		age:int;
+
+		function Age():int = PrintInt(75)
+	}
+
+	class Son extends Father =
+	{
+		function Age():int = PrintInt(age)
+	}
+
+	var Avi:Grandfather := Grandfather{100,45000}
+	var Isaac:Father    := Father{75,25000}
+	var Jacob:Son       := Son{50,15000}
+
+in
+
+	(
+		Avi->age := 99;
+		PrintInt(Avi->Age());
+
+		Isaac->age := 74;
+		PrintInt(Isaac->Age());
+
+		Jacob->age := 49;
+		PrintInt(Jacob->Age());
+	)
+
+end
