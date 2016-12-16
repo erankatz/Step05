@@ -153,6 +153,11 @@
     <Text Include="INPUT_TIGER_PROGRAMS\GoodMerge_Lists.txt" />
     <Text Include="INPUT_TIGER_PROGRAMS\Mat3.txt" />
   </ItemGroup>
+  <ItemGroup>
+    <Image Include="GRAPHVIZ_FILES\ABSYN_Graph.txt.png" />
+    <Image Include="GRAPHVIZ_FILES\InterferenceGraph.txt.png" />
+    <Image Include="GRAPHVIZ_FILES\IR_Graph.txt.png" />
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>

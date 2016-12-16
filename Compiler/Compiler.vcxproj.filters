@@ -292,4 +292,15 @@
       <Filter>Input Tiger Programs</Filter>
     </Text>
   </ItemGroup>
+  <ItemGroup>
+    <Image Include="GRAPHVIZ_FILES\ABSYN_Graph.txt.png">
+      <Filter>Graphviz Files</Filter>
+    </Image>
+    <Image Include="GRAPHVIZ_FILES\InterferenceGraph.txt.png">
+      <Filter>Graphviz Files</Filter>
+    </Image>
+    <Image Include="GRAPHVIZ_FILES\IR_Graph.txt.png">
+      <Filter>Graphviz Files</Filter>
+    </Image>
+  </ItemGroup>
 </Project>
