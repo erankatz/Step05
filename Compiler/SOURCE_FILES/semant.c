@@ -300,17 +300,20 @@ void SEM_transRecordTypeDec(S_table venv,S_table tenv, A_dec dec)
 			EM_error(
 				dec->pos,
 				"type %s is not defined in this scope",
-				S_name(dec->u.type_dec.type_name));
+				S_name(field_type_name));
 		}
 		/***************************************************************/
 		/* [2b] check that there are no two fields with the same name */
 		/***************************************************************/
-		if (S_look(venv, field_name) != NULL)
+		if (S_look(temp_env, field_name) != NULL)
 		{
 			EM_error(
 				dec->pos,
-				"type %s is not defined in this scope",
-				S_name(dec->u.type_dec.type_name));
+				"variable named %s is already defined in type %s",
+				S_name(field_name), S_name(type_name));
+		}
+		else {
+			S_enter(temp_env, field_name,field_type_name);
 		}
 	}
 	
@@ -326,13 +329,18 @@ void SEM_transRecordTypeDec(S_table venv,S_table tenv, A_dec dec)
 	/******************************/
 	/* [5] SOMETHING HAPPENS HERE */
 	/******************************/
+	S_endScope(tenv);
+	S_enter(tenv, type_name, Ty_Record(fieldsTypesList));
 
 	/********************************************/
 	/* [6] check for recursive type definitions */
 	/********************************************/
 	for (fieldTypePtr = fieldsTypesList; fieldTypePtr != NULL; fieldTypePtr = fieldTypePtr->tail)
 	{
-		
+		if (fieldTypePtr->head->ty == Ty_DummyType())
+		{
+			fieldTypePtr->head->ty = Ty_Record(fieldsTypesList);
+		}
 	}
 
 	/******************************/
@@ -698,6 +706,7 @@ Ty_ty SEM_transVarExp(S_table venv,S_table tenv,A_var var)
 {
 	Ty_ty type;
 	Ty_fieldList fieldList;
+	Ty_fieldList fieldListPtr;
 
 	switch (var->kind) {
 	case (A_simpleVar):
@@ -718,7 +727,23 @@ Ty_ty SEM_transVarExp(S_table venv,S_table tenv,A_var var)
 	
 		return (Ty_ty) S_look(venv,var->u.simple);
 
-	case (A_fieldVar):;
+	case (A_fieldVar):
+		if (var->u.field.var->kind == A_simpleVar)
+		{
+			type = S_look(venv, var->u.field.var->u.simple);
+			if (type != NULL && type->kind == Ty_record)
+			{
+				fieldList = type->u.record;
+				for (fieldListPtr = fieldList; fieldListPtr != NULL; fieldListPtr = fieldListPtr->tail)
+				{
+					if (fieldListPtr->head->name == var->u.field.field_name)
+					{
+						return (Ty_ty)fieldList->head->ty;
+					}
+				}
+			}
+		}
+		
 
 	case (A_subscriptVar):;
 

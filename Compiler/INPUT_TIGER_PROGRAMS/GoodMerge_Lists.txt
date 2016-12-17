@@ -1,5 +1,4 @@
 let
-
 	type IntList = {head:int, tail:IntList}
 
 	var a:IntList := IntList{1,nil}
