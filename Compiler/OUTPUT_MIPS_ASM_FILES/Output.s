@@ -6,17 +6,57 @@ Label_0_main:
 
 	addi $fp,$sp,40
 
+	li $t0,-4
+
+	add $t1,$fp,$t0
+
+	sw $v0,0($t1)
+
+	li $t0,-8
+
+	add $t1,$fp,$t0
+
+	sw $v0,0($t1)
+
+	li $t0,-12
+
+	add $t1,$fp,$t0
+
+	sw $v0,0($t1)
+
+	li $t0,-16
+
+	add $t1,$fp,$t0
+
+	sw $v0,0($t1)
+
+	li $t0,-20
+
+	add $t1,$fp,$t0
+
+	sw $v0,0($t1)
+
+	li $t0,-24
+
+	add $t1,$fp,$t0
+
+	sw $v0,0($t1)
+
+	li $t0,-28
+
+	add $t1,$fp,$t0
+
+	sw $v0,0($t1)
+
+	li $t0,-32
+
+	add $t1,$fp,$t0
+
+	sw $v0,0($t1)
+
 	j Label_7_Skip_This_Function_For_Now
 
-Label_8_PrintPrimesInRange:
-
-	li $t0,0
-
-	li $t0,0
-
-	j Label_9_Skip_This_Function_For_Now
-
-Label_10_IsPrime:
+Label_8_Merge:
 
 	li $t0,0
 
@@ -26,7 +66,7 @@ Label_10_IsPrime:
 
 	add $t1,$fp,$t0
 
-	li $t0,1
+	li $t0,0
 
 	sw $t0,0($t1)
 
@@ -34,67 +74,103 @@ Label_10_IsPrime:
 
 	add $t1,$fp,$t0
 
-	li $t0,2
+	li $t0,0
 
 	sw $t0,0($t1)
-
-	li $t1,2
 
 	li $t0,8
 
 	add $t2,$fp,$t0
 
-	lw $t3,0($t2)
+	lw $t1,0($t2)
+
+	li $t0,0
+
+	beq $t1, $t0, Label_16_T
+
+	bne $t1, $t0, Label_17_F
+
+Label_16_T:
 
 	li $t0,1
 
-	sub $t2,$t3,$t0
+	addi $t1,$t0,0
 
-	ble $t1, $t2, Label_11_for_loop
+	j Label_18_END
 
-	bgt $t1, $t2, Label_12_exit_loop
+Label_17_F:
 
-Label_11_for_loop:
+	li $t0,0
 
-	li $t0,-12
+	addi $t1,$t0,0
+
+	j Label_18_END
+
+Label_18_END:
+
+	li $t0,0
+
+	bne $t1, $t0, Label_9_if_taken
+
+	beq $t1, $t0, Label_10_if_not_taken
+
+Label_9_if_taken:
+
+	li $t0,-4
 
 	add $t1,$fp,$t0
 
-	li $t0,2
+	li $t0,12
 
-	sw $t0,0($t1)
+	add $t3,$fp,$t0
 
-	li $t1,2
+	lw $t2,0($t3)
 
-	li $t0,8
+	sw $t2,0($t1)
+
+Label_10_if_not_taken:
+
+	li $t0,12
 
 	add $t2,$fp,$t0
 
-	lw $t3,0($t2)
+	lw $t1,0($t2)
+
+	li $t0,0
+
+	beq $t1, $t0, Label_36_T
+
+	bne $t1, $t0, Label_37_F
+
+Label_36_T:
 
 	li $t0,1
 
-	sub $t2,$t3,$t0
+	addi $t1,$t0,0
 
-	ble $t1, $t2, Label_23_for_loop
+	j Label_38_END
 
-	bgt $t1, $t2, Label_24_exit_loop
+Label_37_F:
 
-Label_23_for_loop:
+	li $t0,0
 
-	li $t0,-8
+	addi $t1,$t0,0
+
+	j Label_38_END
+
+Label_38_END:
+
+	li $t0,0
+
+	bne $t1, $t0, Label_29_if_taken
+
+	beq $t1, $t0, Label_30_if_not_taken
+
+Label_29_if_taken:
+
+	li $t0,-4
 
 	add $t1,$fp,$t0
-
-	lw $t2,0($t1)
-
-	li $t0,-12
-
-	add $t1,$fp,$t0
-
-	lw $t3,0($t1)
-
-	mul $t1,$t2,$t3
 
 	li $t0,8
 
@@ -102,121 +178,249 @@ Label_23_for_loop:
 
 	lw $t2,0($t3)
 
-	beq $t1, $t2, Label_52_T
+	sw $t2,0($t1)
 
-	bne $t1, $t2, Label_53_F
+Label_30_if_not_taken:
 
-Label_52_T:
+	li $t0,8
+
+	add $t2,$fp,$t0
+
+	lw $t1,0($t2)
+
+	li $t0,0
+
+	bne $t1, $t0, Label_56_T
+
+	beq $t1, $t0, Label_57_F
+
+Label_56_T:
 
 	li $t0,1
 
 	addi $t1,$t0,0
 
-	j Label_54_END
+	j Label_58_END
 
-Label_53_F:
+Label_57_F:
 
 	li $t0,0
 
 	addi $t1,$t0,0
 
-	j Label_54_END
+	j Label_58_END
 
-Label_54_END:
+Label_58_END:
 
 	li $t0,0
 
-	bne $t1, $t0, Label_35_if_taken
+	bne $t1, $t0, Label_49_if_taken
 
-	beq $t1, $t0, Label_36_if_not_taken
+	beq $t1, $t0, Label_50_if_not_taken
 
-Label_35_if_taken:
+Label_49_if_taken:
+
+	li $t0,12
+
+	add $t2,$fp,$t0
+
+	lw $t1,0($t2)
+
+	li $t0,0
+
+	bne $t1, $t0, Label_66_T
+
+	beq $t1, $t0, Label_67_F
+
+Label_66_T:
+
+	li $t0,1
+
+	addi $t1,$t0,0
+
+	j Label_68_END
+
+Label_67_F:
+
+	li $t0,0
+
+	addi $t1,$t0,0
+
+	j Label_68_END
+
+Label_68_END:
+
+	li $t0,0
+
+	bne $t1, $t0, Label_59_if_taken
+
+	beq $t1, $t0, Label_60_if_not_taken
+
+Label_59_if_taken:
+
+	li $t0,8
+
+	add $t2,$fp,$t0
+
+	lw $t1,0($t2)
+
+	li $t0,0
+
+	add $t2,$t1,$t0
+
+	lw $t1,0($t2)
+
+	li $t0,12
+
+	add $t3,$fp,$t0
+
+	lw $t2,0($t3)
+
+	li $t0,0
+
+	add $t3,$t2,$t0
+
+	lw $t2,0($t3)
+
+	ble $t1, $t2, Label_91_T
+
+	bgt $t1, $t2, Label_92_F
+
+Label_91_T:
+
+	li $t0,1
+
+	addi $t1,$t0,0
+
+	j Label_93_END
+
+Label_92_F:
+
+	li $t0,0
+
+	addi $t1,$t0,0
+
+	j Label_93_END
+
+Label_93_END:
+
+	li $t0,0
+
+	bne $t1, $t0, Label_69_if_taken
+
+	beq $t1, $t0, Label_70_if_not_taken
+
+Label_69_if_taken:
+
+	li $t0,-8
+
+	add $t1,$fp,$t0
+
+	li $t0,8
+
+	add $t3,$fp,$t0
+
+	lw $t2,0($t3)
+
+	li $t0,0
+
+	add $t3,$t2,$t0
+
+	lw $t2,0($t3)
+
+	sw $t2,0($t1)
 
 	li $t0,-4
 
 	add $t1,$fp,$t0
 
+	sw $v0,0($t1)
+
+Label_70_if_not_taken:
+
+	li $t0,8
+
+	add $t2,$fp,$t0
+
+	lw $t1,0($t2)
+
 	li $t0,0
 
-	sw $t0,0($t1)
-
-Label_36_if_not_taken:
-
-	li $t0,-12
-
-	add $t1,$fp,$t0
-
-	li $t0,-12
-
-	add $t2,$fp,$t0
-
-	lw $t3,0($t2)
-
-	li $t0,1
-
-	add $t2,$t3,$t0
-
-	sw $t2,0($t1)
-
-	li $t0,-12
-
-	add $t2,$fp,$t0
+	add $t2,$t1,$t0
 
 	lw $t1,0($t2)
 
-	li $t0,8
+	li $t0,12
 
-	add $t2,$fp,$t0
+	add $t3,$fp,$t0
 
-	lw $t3,0($t2)
+	lw $t2,0($t3)
+
+	li $t0,0
+
+	add $t3,$t2,$t0
+
+	lw $t2,0($t3)
+
+	bgt $t1, $t2, Label_156_T
+
+	ble $t1, $t2, Label_157_F
+
+Label_156_T:
 
 	li $t0,1
 
-	sub $t2,$t3,$t0
+	addi $t1,$t0,0
 
-	ble $t1, $t2, Label_23_for_loop
+	j Label_158_END
 
-	bgt $t1, $t2, Label_24_exit_loop
+Label_157_F:
 
-Label_24_exit_loop:
+	li $t0,0
+
+	addi $t1,$t0,0
+
+	j Label_158_END
+
+Label_158_END:
+
+	li $t0,0
+
+	bne $t1, $t0, Label_134_if_taken
+
+	beq $t1, $t0, Label_135_if_not_taken
+
+Label_134_if_taken:
 
 	li $t0,-8
 
 	add $t1,$fp,$t0
 
-	li $t0,-8
+	li $t0,12
 
-	add $t2,$fp,$t0
+	add $t3,$fp,$t0
 
-	lw $t3,0($t2)
+	lw $t2,0($t3)
 
-	li $t0,1
+	li $t0,0
 
-	add $t2,$t3,$t0
+	add $t3,$t2,$t0
+
+	lw $t2,0($t3)
 
 	sw $t2,0($t1)
 
-	li $t0,-8
+	li $t0,-4
 
-	add $t2,$fp,$t0
+	add $t1,$fp,$t0
 
-	lw $t1,0($t2)
+	sw $v0,0($t1)
 
-	li $t0,8
+Label_135_if_not_taken:
 
-	add $t2,$fp,$t0
+Label_60_if_not_taken:
 
-	lw $t3,0($t2)
-
-	li $t0,1
-
-	sub $t2,$t3,$t0
-
-	ble $t1, $t2, Label_11_for_loop
-
-	bgt $t1, $t2, Label_12_exit_loop
-
-Label_12_exit_loop:
+Label_50_if_not_taken:
 
 	li $t0,-4
 
@@ -230,19 +434,15 @@ Label_12_exit_loop:
 
 	li $t0,0
 
-Label_9_Skip_This_Function_For_Now:
+Label_7_Skip_This_Function_For_Now:
 
-	li $t0,-4
+	j Label_204_Skip_This_Function_For_Now
 
-	add $t1,$fp,$t0
+Label_205_PrintIntList:
 
-	li $t0,8
+	li $t0,0
 
-	add $t3,$fp,$t0
-
-	lw $t2,0($t3)
-
-	sw $t2,0($t1)
+	li $t0,0
 
 	li $t0,8
 
@@ -250,67 +450,153 @@ Label_9_Skip_This_Function_For_Now:
 
 	lw $t1,0($t2)
 
-	li $t0,12
-
-	add $t3,$fp,$t0
-
-	lw $t2,0($t3)
-
-	ble $t1, $t2, Label_65_for_loop
-
-	bgt $t1, $t2, Label_66_exit_loop
-
-Label_65_for_loop:
-
 	li $t0,0
 
-	bne $v0, $t0, Label_87_if_taken
+	bne $t1, $t0, Label_213_T
 
-	beq $v0, $t0, Label_88_if_not_taken
+	beq $t1, $t0, Label_214_F
 
-Label_87_if_taken:
-
-Label_88_if_not_taken:
-
-	li $t0,-4
-
-	add $t1,$fp,$t0
-
-	li $t0,-4
-
-	add $t2,$fp,$t0
-
-	lw $t3,0($t2)
+Label_213_T:
 
 	li $t0,1
 
-	add $t2,$t3,$t0
+	addi $t1,$t0,0
 
-	sw $t2,0($t1)
+	j Label_215_END
 
-	li $t0,-4
+Label_214_F:
 
-	add $t2,$fp,$t0
+	li $t0,0
 
-	lw $t1,0($t2)
+	addi $t1,$t0,0
 
-	li $t0,12
+	j Label_215_END
+
+Label_215_END:
+
+	li $t0,0
+
+	bne $t1, $t0, Label_206_if_taken
+
+	beq $t1, $t0, Label_207_if_not_taken
+
+Label_206_if_taken:
+
+Label_207_if_not_taken:
+
+	li $t0,0
+
+	li $t0,0
+
+Label_204_Skip_This_Function_For_Now:
+
+	li $t0,-12
+
+	add $t1,$fp,$t0
+
+	lw $t2,0($t1)
+
+	li $t0,4
+
+	add $t1,$t2,$t0
+
+	li $t0,-16
 
 	add $t3,$fp,$t0
 
 	lw $t2,0($t3)
 
-	ble $t1, $t2, Label_65_for_loop
+	sw $t2,0($t1)
 
-	bgt $t1, $t2, Label_66_exit_loop
+	li $t0,-8
 
-Label_66_exit_loop:
+	add $t1,$fp,$t0
 
-	li $t0,0
+	lw $t2,0($t1)
 
-	li $t0,0
+	li $t0,4
 
-Label_7_Skip_This_Function_For_Now:
+	add $t1,$t2,$t0
+
+	li $t0,-12
+
+	add $t3,$fp,$t0
+
+	lw $t2,0($t3)
+
+	sw $t2,0($t1)
+
+	li $t0,-4
+
+	add $t1,$fp,$t0
+
+	lw $t2,0($t1)
+
+	li $t0,4
+
+	add $t1,$t2,$t0
+
+	li $t0,-8
+
+	add $t3,$fp,$t0
+
+	lw $t2,0($t3)
+
+	sw $t2,0($t1)
+
+	li $t0,-28
+
+	add $t1,$fp,$t0
+
+	lw $t2,0($t1)
+
+	li $t0,4
+
+	add $t1,$t2,$t0
+
+	li $t0,-32
+
+	add $t3,$fp,$t0
+
+	lw $t2,0($t3)
+
+	sw $t2,0($t1)
+
+	li $t0,-24
+
+	add $t1,$fp,$t0
+
+	lw $t2,0($t1)
+
+	li $t0,4
+
+	add $t1,$t2,$t0
+
+	li $t0,-28
+
+	add $t3,$fp,$t0
+
+	lw $t2,0($t3)
+
+	sw $t2,0($t1)
+
+	li $t0,-20
+
+	add $t1,$fp,$t0
+
+	lw $t2,0($t1)
+
+	li $t0,4
+
+	add $t1,$t2,$t0
+
+	li $t0,-24
+
+	add $t3,$fp,$t0
+
+	lw $t2,0($t3)
+
+	sw $t2,0($t1)
 
 	li $v0,10
 

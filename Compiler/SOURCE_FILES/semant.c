@@ -339,7 +339,7 @@ void SEM_transRecordTypeDec(S_table venv,S_table tenv, A_dec dec)
 	{
 		if (fieldTypePtr->head->ty == Ty_DummyType())
 		{
-			fieldTypePtr->head->ty = Ty_Record(fieldsTypesList);
+			fieldTypePtr->head->ty = S_look(tenv, type_name);
 		}
 	}
 
@@ -738,7 +738,7 @@ Ty_ty SEM_transVarExp(S_table venv,S_table tenv,A_var var)
 				{
 					if (fieldListPtr->head->name == var->u.field.field_name)
 					{
-						return (Ty_ty)fieldList->head->ty;
+						return (Ty_ty)fieldListPtr->head->ty;
 					}
 				}
 			}

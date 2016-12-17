@@ -6,163 +6,171 @@ Label_0_main:
 
 	addi $fp,$sp,40
 
-	j Label_7_Skip_This_Function_For_Now
+	li Temp_10,-4
 
-Label_8_PrintPrimesInRange:
+	add Temp_9,$fp,Temp_10
 
-	li Temp_3,0
+	sw $v0,0(Temp_9)
 
-	li Temp_4,0
+	li Temp_13,-8
 
-	j Label_9_Skip_This_Function_For_Now
+	add Temp_12,$fp,Temp_13
 
-Label_10_IsPrime:
+	sw $v0,0(Temp_12)
 
-	li Temp_5,0
+	li Temp_15,-12
 
-	li Temp_6,0
+	add Temp_14,$fp,Temp_15
 
-	li Temp_8,-4
+	sw $v0,0(Temp_14)
 
-	add Temp_7,$fp,Temp_8
-
-	li Temp_9,1
-
-	sw Temp_9,0(Temp_7)
-
-	li Temp_11,-8
-
-	add Temp_10,$fp,Temp_11
-
-	li Temp_12,2
-
-	sw Temp_12,0(Temp_10)
-
-	li Temp_13,2
-
-	li Temp_17,8
+	li Temp_17,-16
 
 	add Temp_16,$fp,Temp_17
 
-	lw Temp_15,0(Temp_16)
+	sw $v0,0(Temp_16)
 
-	li Temp_18,1
+	li Temp_19,-20
 
-	sub Temp_14,Temp_15,Temp_18
+	add Temp_18,$fp,Temp_19
 
-	ble Temp_13, Temp_14, Label_11_for_loop
+	sw $v0,0(Temp_18)
 
-	bgt Temp_13, Temp_14, Label_12_exit_loop
+	li Temp_21,-24
 
-Label_11_for_loop:
+	add Temp_20,$fp,Temp_21
 
-	li Temp_20,-12
+	sw $v0,0(Temp_20)
 
-	add Temp_19,$fp,Temp_20
+	li Temp_23,-28
 
-	li Temp_21,2
+	add Temp_22,$fp,Temp_23
 
-	sw Temp_21,0(Temp_19)
+	sw $v0,0(Temp_22)
 
-	li Temp_22,2
+	li Temp_25,-32
 
-	li Temp_26,8
+	add Temp_24,$fp,Temp_25
 
-	add Temp_25,$fp,Temp_26
+	sw $v0,0(Temp_24)
 
-	lw Temp_24,0(Temp_25)
+	j Label_7_Skip_This_Function_For_Now
 
-	li Temp_27,1
+Label_8_Merge:
 
-	sub Temp_23,Temp_24,Temp_27
+	li Temp_26,0
 
-	ble Temp_22, Temp_23, Label_23_for_loop
+	li Temp_27,0
 
-	bgt Temp_22, Temp_23, Label_24_exit_loop
+	li Temp_29,-4
 
-Label_23_for_loop:
+	add Temp_28,$fp,Temp_29
 
-	li Temp_31,-8
+	li Temp_30,0
 
-	add Temp_30,$fp,Temp_31
+	sw Temp_30,0(Temp_28)
 
-	lw Temp_29,0(Temp_30)
+	li Temp_32,-8
 
-	li Temp_34,-12
+	add Temp_31,$fp,Temp_32
 
-	add Temp_33,$fp,Temp_34
+	li Temp_33,0
 
-	lw Temp_32,0(Temp_33)
+	sw Temp_33,0(Temp_31)
 
-	mul Temp_28,Temp_29,Temp_32
+	li Temp_36,8
 
-	li Temp_37,8
+	add Temp_35,$fp,Temp_36
 
-	add Temp_36,$fp,Temp_37
+	lw Temp_34,0(Temp_35)
 
-	lw Temp_35,0(Temp_36)
+	li Temp_37,0
 
-	beq Temp_28, Temp_35, Label_52_T
+	beq Temp_34, Temp_37, Label_16_T
 
-	bne Temp_28, Temp_35, Label_53_F
+	bne Temp_34, Temp_37, Label_17_F
 
-Label_52_T:
+Label_16_T:
 
 	li Temp_38,1
 
 	addi Temp_2,Temp_38,0
 
-	j Label_54_END
+	j Label_18_END
 
-Label_53_F:
+Label_17_F:
 
 	li Temp_39,0
 
 	addi Temp_2,Temp_39,0
 
-	j Label_54_END
+	j Label_18_END
 
-Label_54_END:
+Label_18_END:
 
 	li Temp_40,0
 
-	bne Temp_2, Temp_40, Label_35_if_taken
+	bne Temp_2, Temp_40, Label_9_if_taken
 
-	beq Temp_2, Temp_40, Label_36_if_not_taken
+	beq Temp_2, Temp_40, Label_10_if_not_taken
 
-Label_35_if_taken:
+Label_9_if_taken:
 
 	li Temp_42,-4
 
 	add Temp_41,$fp,Temp_42
 
-	li Temp_43,0
-
-	sw Temp_43,0(Temp_41)
-
-Label_36_if_not_taken:
-
-	li Temp_45,-12
+	li Temp_45,12
 
 	add Temp_44,$fp,Temp_45
 
-	li Temp_49,-12
+	lw Temp_43,0(Temp_44)
 
-	add Temp_48,$fp,Temp_49
+	sw Temp_43,0(Temp_41)
 
-	lw Temp_47,0(Temp_48)
+Label_10_if_not_taken:
+
+	li Temp_48,12
+
+	add Temp_47,$fp,Temp_48
+
+	lw Temp_46,0(Temp_47)
+
+	li Temp_49,0
+
+	beq Temp_46, Temp_49, Label_36_T
+
+	bne Temp_46, Temp_49, Label_37_F
+
+Label_36_T:
 
 	li Temp_50,1
 
-	add Temp_46,Temp_47,Temp_50
+	addi Temp_3,Temp_50,0
 
-	sw Temp_46,0(Temp_44)
+	j Label_38_END
 
-	li Temp_53,-12
+Label_37_F:
 
-	add Temp_52,$fp,Temp_53
+	li Temp_51,0
 
-	lw Temp_51,0(Temp_52)
+	addi Temp_3,Temp_51,0
+
+	j Label_38_END
+
+Label_38_END:
+
+	li Temp_52,0
+
+	bne Temp_3, Temp_52, Label_29_if_taken
+
+	beq Temp_3, Temp_52, Label_30_if_not_taken
+
+Label_29_if_taken:
+
+	li Temp_54,-4
+
+	add Temp_53,$fp,Temp_54
 
 	li Temp_57,8
 
@@ -170,147 +178,425 @@ Label_36_if_not_taken:
 
 	lw Temp_55,0(Temp_56)
 
-	li Temp_58,1
+	sw Temp_55,0(Temp_53)
 
-	sub Temp_54,Temp_55,Temp_58
+Label_30_if_not_taken:
 
-	ble Temp_51, Temp_54, Label_23_for_loop
-
-	bgt Temp_51, Temp_54, Label_24_exit_loop
-
-Label_24_exit_loop:
-
-	li Temp_60,-8
+	li Temp_60,8
 
 	add Temp_59,$fp,Temp_60
 
-	li Temp_64,-8
+	lw Temp_58,0(Temp_59)
 
-	add Temp_63,$fp,Temp_64
+	li Temp_61,0
 
-	lw Temp_62,0(Temp_63)
+	bne Temp_58, Temp_61, Label_56_T
 
-	li Temp_65,1
+	beq Temp_58, Temp_61, Label_57_F
 
-	add Temp_61,Temp_62,Temp_65
+Label_56_T:
 
-	sw Temp_61,0(Temp_59)
+	li Temp_62,1
 
-	li Temp_68,-8
+	addi Temp_4,Temp_62,0
 
-	add Temp_67,$fp,Temp_68
+	j Label_58_END
 
-	lw Temp_66,0(Temp_67)
+Label_57_F:
 
-	li Temp_72,8
+	li Temp_63,0
 
-	add Temp_71,$fp,Temp_72
+	addi Temp_4,Temp_63,0
 
-	lw Temp_70,0(Temp_71)
+	j Label_58_END
 
-	li Temp_73,1
+Label_58_END:
 
-	sub Temp_69,Temp_70,Temp_73
+	li Temp_64,0
 
-	ble Temp_66, Temp_69, Label_11_for_loop
+	bne Temp_4, Temp_64, Label_49_if_taken
 
-	bgt Temp_66, Temp_69, Label_12_exit_loop
+	beq Temp_4, Temp_64, Label_50_if_not_taken
 
-Label_12_exit_loop:
+Label_49_if_taken:
 
-	li Temp_76,-4
+	li Temp_67,12
+
+	add Temp_66,$fp,Temp_67
+
+	lw Temp_65,0(Temp_66)
+
+	li Temp_68,0
+
+	bne Temp_65, Temp_68, Label_66_T
+
+	beq Temp_65, Temp_68, Label_67_F
+
+Label_66_T:
+
+	li Temp_69,1
+
+	addi Temp_5,Temp_69,0
+
+	j Label_68_END
+
+Label_67_F:
+
+	li Temp_70,0
+
+	addi Temp_5,Temp_70,0
+
+	j Label_68_END
+
+Label_68_END:
+
+	li Temp_71,0
+
+	bne Temp_5, Temp_71, Label_59_if_taken
+
+	beq Temp_5, Temp_71, Label_60_if_not_taken
+
+Label_59_if_taken:
+
+	li Temp_76,8
 
 	add Temp_75,$fp,Temp_76
 
 	lw Temp_74,0(Temp_75)
 
-	addi $v0,Temp_74,0
+	li Temp_77,0
 
-	li Temp_78,0
+	add Temp_73,Temp_74,Temp_77
 
-	li Temp_79,0
+	lw Temp_72,0(Temp_73)
 
-Label_9_Skip_This_Function_For_Now:
+	li Temp_82,12
 
-	li Temp_81,-4
+	add Temp_81,$fp,Temp_82
 
-	add Temp_80,$fp,Temp_81
+	lw Temp_80,0(Temp_81)
 
-	li Temp_84,8
+	li Temp_83,0
 
-	add Temp_83,$fp,Temp_84
+	add Temp_79,Temp_80,Temp_83
 
-	lw Temp_82,0(Temp_83)
+	lw Temp_78,0(Temp_79)
 
-	sw Temp_82,0(Temp_80)
+	ble Temp_72, Temp_78, Label_91_T
 
-	li Temp_87,8
+	bgt Temp_72, Temp_78, Label_92_F
 
-	add Temp_86,$fp,Temp_87
+Label_91_T:
 
-	lw Temp_85,0(Temp_86)
+	li Temp_84,1
 
-	li Temp_90,12
+	addi Temp_6,Temp_84,0
 
-	add Temp_89,$fp,Temp_90
+	j Label_93_END
 
-	lw Temp_88,0(Temp_89)
+Label_92_F:
 
-	ble Temp_85, Temp_88, Label_65_for_loop
+	li Temp_85,0
 
-	bgt Temp_85, Temp_88, Label_66_exit_loop
+	addi Temp_6,Temp_85,0
 
-Label_65_for_loop:
+	j Label_93_END
 
-	li Temp_91,0
+Label_93_END:
 
-	bne $v0, Temp_91, Label_87_if_taken
+	li Temp_86,0
 
-	beq $v0, Temp_91, Label_88_if_not_taken
+	bne Temp_6, Temp_86, Label_69_if_taken
 
-Label_87_if_taken:
+	beq Temp_6, Temp_86, Label_70_if_not_taken
 
-Label_88_if_not_taken:
+Label_69_if_taken:
 
-	li Temp_93,-4
+	li Temp_88,-8
+
+	add Temp_87,$fp,Temp_88
+
+	li Temp_93,8
 
 	add Temp_92,$fp,Temp_93
 
-	li Temp_97,-4
+	lw Temp_91,0(Temp_92)
 
-	add Temp_96,$fp,Temp_97
+	li Temp_94,0
 
-	lw Temp_95,0(Temp_96)
+	add Temp_90,Temp_91,Temp_94
 
-	li Temp_98,1
+	lw Temp_89,0(Temp_90)
 
-	add Temp_94,Temp_95,Temp_98
+	sw Temp_89,0(Temp_87)
 
-	sw Temp_94,0(Temp_92)
+	li Temp_96,-4
 
-	li Temp_101,-4
+	add Temp_95,$fp,Temp_96
+
+	sw $v0,0(Temp_95)
+
+Label_70_if_not_taken:
+
+	li Temp_101,8
 
 	add Temp_100,$fp,Temp_101
 
 	lw Temp_99,0(Temp_100)
 
-	li Temp_104,12
+	li Temp_102,0
 
-	add Temp_103,$fp,Temp_104
+	add Temp_98,Temp_99,Temp_102
 
-	lw Temp_102,0(Temp_103)
+	lw Temp_97,0(Temp_98)
 
-	ble Temp_99, Temp_102, Label_65_for_loop
+	li Temp_107,12
 
-	bgt Temp_99, Temp_102, Label_66_exit_loop
+	add Temp_106,$fp,Temp_107
 
-Label_66_exit_loop:
+	lw Temp_105,0(Temp_106)
 
-	li Temp_105,0
+	li Temp_108,0
 
-	li Temp_106,0
+	add Temp_104,Temp_105,Temp_108
+
+	lw Temp_103,0(Temp_104)
+
+	bgt Temp_97, Temp_103, Label_156_T
+
+	ble Temp_97, Temp_103, Label_157_F
+
+Label_156_T:
+
+	li Temp_109,1
+
+	addi Temp_7,Temp_109,0
+
+	j Label_158_END
+
+Label_157_F:
+
+	li Temp_110,0
+
+	addi Temp_7,Temp_110,0
+
+	j Label_158_END
+
+Label_158_END:
+
+	li Temp_111,0
+
+	bne Temp_7, Temp_111, Label_134_if_taken
+
+	beq Temp_7, Temp_111, Label_135_if_not_taken
+
+Label_134_if_taken:
+
+	li Temp_113,-8
+
+	add Temp_112,$fp,Temp_113
+
+	li Temp_118,12
+
+	add Temp_117,$fp,Temp_118
+
+	lw Temp_116,0(Temp_117)
+
+	li Temp_119,0
+
+	add Temp_115,Temp_116,Temp_119
+
+	lw Temp_114,0(Temp_115)
+
+	sw Temp_114,0(Temp_112)
+
+	li Temp_121,-4
+
+	add Temp_120,$fp,Temp_121
+
+	sw $v0,0(Temp_120)
+
+Label_135_if_not_taken:
+
+Label_60_if_not_taken:
+
+Label_50_if_not_taken:
+
+	li Temp_124,-4
+
+	add Temp_123,$fp,Temp_124
+
+	lw Temp_122,0(Temp_123)
+
+	addi $v0,Temp_122,0
+
+	li Temp_125,0
+
+	li Temp_126,0
 
 Label_7_Skip_This_Function_For_Now:
+
+	j Label_204_Skip_This_Function_For_Now
+
+Label_205_PrintIntList:
+
+	li Temp_127,0
+
+	li Temp_128,0
+
+	li Temp_131,8
+
+	add Temp_130,$fp,Temp_131
+
+	lw Temp_129,0(Temp_130)
+
+	li Temp_132,0
+
+	bne Temp_129, Temp_132, Label_213_T
+
+	beq Temp_129, Temp_132, Label_214_F
+
+Label_213_T:
+
+	li Temp_133,1
+
+	addi Temp_8,Temp_133,0
+
+	j Label_215_END
+
+Label_214_F:
+
+	li Temp_134,0
+
+	addi Temp_8,Temp_134,0
+
+	j Label_215_END
+
+Label_215_END:
+
+	li Temp_135,0
+
+	bne Temp_8, Temp_135, Label_206_if_taken
+
+	beq Temp_8, Temp_135, Label_207_if_not_taken
+
+Label_206_if_taken:
+
+Label_207_if_not_taken:
+
+	li Temp_136,0
+
+	li Temp_137,0
+
+Label_204_Skip_This_Function_For_Now:
+
+	li Temp_141,-12
+
+	add Temp_140,$fp,Temp_141
+
+	lw Temp_139,0(Temp_140)
+
+	li Temp_142,4
+
+	add Temp_138,Temp_139,Temp_142
+
+	li Temp_145,-16
+
+	add Temp_144,$fp,Temp_145
+
+	lw Temp_143,0(Temp_144)
+
+	sw Temp_143,0(Temp_138)
+
+	li Temp_149,-8
+
+	add Temp_148,$fp,Temp_149
+
+	lw Temp_147,0(Temp_148)
+
+	li Temp_150,4
+
+	add Temp_146,Temp_147,Temp_150
+
+	li Temp_153,-12
+
+	add Temp_152,$fp,Temp_153
+
+	lw Temp_151,0(Temp_152)
+
+	sw Temp_151,0(Temp_146)
+
+	li Temp_157,-4
+
+	add Temp_156,$fp,Temp_157
+
+	lw Temp_155,0(Temp_156)
+
+	li Temp_158,4
+
+	add Temp_154,Temp_155,Temp_158
+
+	li Temp_161,-8
+
+	add Temp_160,$fp,Temp_161
+
+	lw Temp_159,0(Temp_160)
+
+	sw Temp_159,0(Temp_154)
+
+	li Temp_165,-28
+
+	add Temp_164,$fp,Temp_165
+
+	lw Temp_163,0(Temp_164)
+
+	li Temp_166,4
+
+	add Temp_162,Temp_163,Temp_166
+
+	li Temp_169,-32
+
+	add Temp_168,$fp,Temp_169
+
+	lw Temp_167,0(Temp_168)
+
+	sw Temp_167,0(Temp_162)
+
+	li Temp_173,-24
+
+	add Temp_172,$fp,Temp_173
+
+	lw Temp_171,0(Temp_172)
+
+	li Temp_174,4
+
+	add Temp_170,Temp_171,Temp_174
+
+	li Temp_177,-28
+
+	add Temp_176,$fp,Temp_177
+
+	lw Temp_175,0(Temp_176)
+
+	sw Temp_175,0(Temp_170)
+
+	li Temp_181,-20
+
+	add Temp_180,$fp,Temp_181
+
+	lw Temp_179,0(Temp_180)
+
+	li Temp_182,4
+
+	add Temp_178,Temp_179,Temp_182
+
+	li Temp_185,-24
+
+	add Temp_184,$fp,Temp_185
+
+	lw Temp_183,0(Temp_184)
+
+	sw Temp_183,0(Temp_178)
 
 	li $v0,10
 
