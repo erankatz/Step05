@@ -707,7 +707,7 @@ Ty_ty SEM_transVarExp(S_table venv,S_table tenv,A_var var)
 	Ty_ty type;
 	Ty_fieldList fieldList;
 	Ty_fieldList fieldListPtr;
-
+	S_symbol varName;
 	switch (var->kind) {
 	case (A_simpleVar):
 
@@ -728,25 +728,27 @@ Ty_ty SEM_transVarExp(S_table venv,S_table tenv,A_var var)
 		return (Ty_ty) S_look(venv,var->u.simple);
 
 	case (A_fieldVar):
-		if (var->u.field.var->kind == A_simpleVar)
+		type = SEM_transVarExp(venv,tenv,var->u.field.var);			
+		
+		if (type != NULL && type->kind == Ty_record)
 		{
-			type = S_look(venv, var->u.field.var->u.simple);
-			if (type != NULL && type->kind == Ty_record)
+			fieldList = type->u.record;
+			for (fieldListPtr = fieldList; fieldListPtr != NULL; fieldListPtr = fieldListPtr->tail)
 			{
-				fieldList = type->u.record;
-				for (fieldListPtr = fieldList; fieldListPtr != NULL; fieldListPtr = fieldListPtr->tail)
+				if (fieldListPtr->head->name == var->u.field.field_name)
 				{
-					if (fieldListPtr->head->name == var->u.field.field_name)
-					{
-						return (Ty_ty)fieldListPtr->head->ty;
-					}
+					return (Ty_ty)fieldListPtr->head->ty;
 				}
 			}
 		}
 		
 
-	case (A_subscriptVar):;
-
+	case (A_subscriptVar):
+		type = SEM_transVarExp(venv, tenv, var->u.subscript.var);
+		if (type != NULL && type->kind == Ty_array)
+		{
+			return (type->u.array);
+		}
 	}
 }
 
